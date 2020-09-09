@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Bantar</string>
-    <string name="button_question">Icebreaker Questions</string>
+    <string name="button_question">Icebreakers</string>
     <string name="button_would_you_rather">Would you Rather?</string>
+    <string name="button_this_or_that">This or That?</string>
+    <string name="button_just_a_minute">Just a Minute...</string>
     <string name="new_question">New Question</string>
+    <string name="desc_justaminute">You have one minute to discuss the following topic</string>
 </resources>

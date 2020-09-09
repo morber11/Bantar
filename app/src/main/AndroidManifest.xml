@@ -15,9 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionsActivity"></activity>
-        <activity android:name=".WouldYouRatherActivity"></activity>
-
+        <activity android:name=".activities.IcebreakersActivity"></activity>
+        <activity android:name=".activities.WouldYouRatherActivity"></activity>
+        <activity android:name=".activities.ThisOrThatActivity"></activity>
+        <activity android:name=".activities.JustAMinuteActivity"></activity>
     </application>
 
 </manifest>

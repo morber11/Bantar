@@ -17,7 +17,7 @@
         android:bottomRightRadius="8dp"
         android:minWidth="250dp"
         android:minHeight="50dp"
-        android:onClick="onQuestionClick"
+        android:onClick="onIBClick"
         android:text="@string/button_question"
         android:topLeftRadius="8dp"
         android:topRightRadius="8dp"
@@ -29,13 +29,13 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.261" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonWYR"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="100dp"
         android:background="@color/colorPrimary"
         android:bottomLeftRadius="8dp"
@@ -53,7 +53,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonQuestion"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonTOT"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorPrimary"
+        android:bottomLeftRadius="8dp"
+        android:bottomRightRadius="8dp"
+        android:minWidth="250dp"
+        android:minHeight="50dp"
+        android:onClick="onTOTClick"
+        android:text="@string/button_this_or_that"
+        android:topLeftRadius="8dp"
+        android:topRightRadius="8dp"
+        app:autoSizeMaxTextSize="90sp"
+        app:autoSizeMinTextSize="24sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonWYR"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <Button
+        android:id="@+id/buttonTOT2"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorPrimary"
+        android:bottomLeftRadius="8dp"
+        android:bottomRightRadius="8dp"
+        android:minWidth="250dp"
+        android:minHeight="50dp"
+        android:onClick="onJAMClick"
+        android:text="@string/button_just_a_minute"
+        android:topLeftRadius="8dp"
+        android:topRightRadius="8dp"
+        app:autoSizeMaxTextSize="90sp"
+        app:autoSizeMinTextSize="24sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTOT"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

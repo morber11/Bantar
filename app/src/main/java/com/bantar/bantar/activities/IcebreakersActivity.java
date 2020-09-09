@@ -1,12 +1,13 @@
-package com.bantar.bantar;
+package com.bantar.bantar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
+import com.bantar.bantar.R;
+import com.bantar.bantar.utils.ExceptionUtil;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,7 +16,7 @@ import java.util.Random;
 
 import static android.view.animation.AnimationUtils.loadAnimation;
 
-public class WouldYouRatherActivity extends AppCompatActivity {
+public class IcebreakersActivity extends AppCompatActivity {
 
     private Button button;
     private TextView question;
@@ -25,8 +26,13 @@ public class WouldYouRatherActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wouldyourather);
+        this.setTitle("Icebreakers");
+        setContentView(R.layout.activity_question);
 
+        initialize();
+    }
+
+    private void initialize() {
         loadQuestionList();
         button = (Button) findViewById(R.id.buttonQuestion);
         question = (TextView) findViewById(R.id.question);
@@ -41,7 +47,7 @@ public class WouldYouRatherActivity extends AppCompatActivity {
         ArrayList<String> lines = new ArrayList<>();
 
         StringBuffer sb = new StringBuffer();
-        InputStream is = this.getResources().openRawResource(R.raw.wyr);
+        InputStream is = this.getResources().openRawResource(R.raw.questions_icebreakers);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
 
@@ -53,21 +59,10 @@ public class WouldYouRatherActivity extends AppCompatActivity {
                     lines.add(line);
                 is.close();
             } catch (Exception e) {
-                System.out.println("An error occured");
-                e.printStackTrace();
+                ExceptionUtil.handle(e);
             }
         }
         return lines;
-    }
-
-    private void fadeIn() {
-        Animation aniFade = loadAnimation(getApplicationContext(),R.anim.fade_in);
-        question.startAnimation(aniFade);
-    }
-
-    private void fadeOut() {
-        Animation aniFade = loadAnimation(getApplicationContext(),R.anim.fade_out);
-        question.startAnimation(aniFade);
     }
 
     // event handler
@@ -75,7 +70,7 @@ public class WouldYouRatherActivity extends AppCompatActivity {
         if (!(v == button))
             return;
 
-        fadeOut();
+        animFadeOut();
         displayNewQuestion();
     }
 
@@ -88,14 +83,14 @@ public class WouldYouRatherActivity extends AppCompatActivity {
             question.setText(s);
             break;
         }
-        fadeIn();
+        animFadeIn();
     }
 
     private String getNewQuestion() {
-        // need to check if we have any new questions available...
-        if((wordList.size() < 1)) {
+        // need to check if we have any new questions_icebreakers available...
+        if ((wordList.size() < 1))
             resetWordList();
-        }
+
 
         Random rand = new Random();
         int i = rand.nextInt(wordList.size());
@@ -113,4 +108,15 @@ public class WouldYouRatherActivity extends AppCompatActivity {
         usedList.clear();
     }
 
+    //region Animations
+    private void animFadeIn() {
+        Animation aniFade = loadAnimation(getApplicationContext(),R.anim.fade_in);
+        question.startAnimation(aniFade);
+    }
+
+    private void animFadeOut() {
+        Animation aniFade = loadAnimation(getApplicationContext(),R.anim.fade_out);
+        question.startAnimation(aniFade);
+    }
+    //endregion
 }

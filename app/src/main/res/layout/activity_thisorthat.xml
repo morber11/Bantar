@@ -4,31 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WouldYouRatherActivity">
+    tools:context=".activities.ThisOrThatActivity">
 
     <TextView
         android:id="@+id/question"
         android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="64dp"
         android:text="Hello World!"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="40sp"
         app:autoSizeMinTextSize="12sp"
-        app:autoSizeMaxTextSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/buttonQuestion"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_marginBottom="100dp"
         android:background="@color/colorPrimary"
         android:bottomLeftRadius="8dp"
@@ -37,16 +36,14 @@
         android:minHeight="50dp"
         android:onClick="onClick"
         android:text="@string/new_question"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="24sp"
-        app:autoSizeMaxTextSize="90sp"
         android:topLeftRadius="8dp"
         android:topRightRadius="8dp"
+        app:autoSizeMaxTextSize="90sp"
+        app:autoSizeMinTextSize="24sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
